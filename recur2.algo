@@ -1,0 +1,18 @@
+function isPalindrome(str) {
+    str = str.toLowerCase().replace(/[^a-z0-9]/g, ""); // Remove spaces, punctuation, and convert to lowercase
+    if (str.length <= 1) {
+        return true;
+    }
+    if (str[0] !== str[str.length - 1]) {
+        return false;
+    }
+    return isPalindrome(str.slice(1, -1));
+}
+
+// Example usage:
+const text = prompt("Enter a string: ");
+if (isPalindrome(text)) {
+    console.log(`'${text}' is a palindrome.`);
+} else {
+    console.log(`'${text}' is not a palindrome.`);
+}
